@@ -14,4 +14,7 @@ before_install:
 
 # Serie de comandos a ejecutarse
 script:
+  # El CI como ture hace que al correr los test de react, ya no
+  # aparezca lo que aparece como cuando se ejecuta el watch
   - docker run -e CI=true gtorres777/docker-react npm run test
+
