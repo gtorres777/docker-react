@@ -1,0 +1,18 @@
+FROM node:alpine
+
+#### This was made for problems with permissions on the container
+USER node
+RUN mkdir -p /home/node/app
+
+WORKDIR /home/node/app
+
+### Also in here changing the group with the user set in line 5
+COPY --chown=node:node ./package.json .
+
+RUN npm install
+
+COPY --chown=node:node . .
+
+CMD ["npm","run","start"]
+
+
