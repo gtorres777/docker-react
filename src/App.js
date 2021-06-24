@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          cambio xD
+          Cambiado despues de que se hizo deploy satisfactoriamente en rama Feature
         </p>
         <a
           className="App-link"
