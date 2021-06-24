@@ -1,0 +1,15 @@
+# Para poder hacer uso de docker se necesita root permission por ello el sudo
+sudo: required
+
+# Con esto se le indica a TRAVIS CI que se necesita docker  
+services:
+  -docker
+
+# Setup necesario para antes de que se ejecuten los tests
+before_install:
+  # Este tag establecido puede ser cualquiera ya que solo se usa aqui pero es bueno seguir las convenciones
+  - docker build -t gtorres777/docker-react -f Dockerfile.dev .
+
+# Serie de comandos a ejecutarse
+script:
+  - docker run -e CI=true gtorres777/docker-react npm run test
